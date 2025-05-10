@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redescubriendonos</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+    <header>
+        <h1>🧩 Redescubriendonos</h1>
+    </header>
+    <main>
+        <section id="introSection">
+            <div id="introText">
+                🧩 Redescubrirnos y Encendernos<br><br>
+                💬 Parte 1 – Redescubriéndonos<br>
+                Una selección de temas para charlar, reconectar y descubrirnos de nuevo.<br>
+                📅 1 o 2 temas por semana, elegidas al azar, idealmente en la cama.<br>
+                🛏️ No es obligatorio que termine en sexo. Solo queremos volver a abrir puertas.<br>
+                🧠 Sirve para hablar de deseos, fantasías, miedos, lo que sentimos… sin presión.<br><br>
+
+                🔥 Parte 2 – Hoy te sorprendo yo<br>
+                Una mini selección HOT con ideas para actuar y soltar la imaginación.<br>
+                📅 1 noche por semana (o la que se pueda) se hace una ronda de acción.<br>
+                🎲 Se obtienen 4 al azar, se dividen y las cumplen en turnos, como un juego.<br>
+                🔥 Pensado para soltarse, animarse, y explorar sin vergüenza ni rutina.<br>
+            </div>
+            <div id="botones-container">
+                <button onclick="mostrarJuego()">Jugar</button>
+                <button onclick="reiniciarJuego()" class="boton-secundario">Reiniciar a cero</button>
+            </div>
+        </section>
+
+        <section id="juegoSection" class="hidden">
+            <div class="controls">
+                <button id="btnCharla" onclick="seleccionarCarta('charla')">Conversaciones íntimas</button>
+                <button id="btnAccion" onclick="seleccionarCarta('accion')">Ideas HOT</button>
+                <button onclick="reiniciarHoy()">Reiniciar</button>
+                <button onclick="mostrarInstrucciones()">Instrucciones</button>
+            </div>
+            <div>
+                <h3>🔥 Ideas HOT de hoy</h3>
+                <div id="tarjetasAccion" class="card-list"></div>
+
+                <h3>🛏️ Conversaciones íntimas</h3>
+                <div id="tarjetasCharla" class="card-list"></div>
+            </div>
+        </section>
+
+        <footer style="text-align:center; margin-top: 40px; color: #999; font-size: 12px;">
+            Hecho con 💌 para reconectar.
+        </footer>
+    </main>
+    <script src="tarjetas.js"></script>
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./service-worker.js')
+                .then((registration) => {
+                    console.log('Service Worker registrado con éxito:', registration);
+                })
+                .catch((error) => {
+                    console.log('Error al registrar el Service Worker:', error);
+                });
+        }
+    </script>
+</body>
+
+</html>

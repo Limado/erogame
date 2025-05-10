@@ -1,0 +1,146 @@
+/* styles.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fdf6f0;
+    color: #333;
+}
+
+header {
+    background-color: #fae3d9;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #f7c59f;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #d95d39;
+}
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+button {
+    background-color: #ff8b6a;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #e07356;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.card {
+    background-color: #fff;
+    border: 2px solid #f7c59f;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+#introText {
+    white-space: pre-wrap;
+    margin-bottom: 20px;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.card-list {
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.tarjeta-lista {
+    list-style-type: "💬 ";
+    padding-left: 20px;
+    margin-bottom: 1em;
+}
+
+#tarjetasAccion .tarjeta-lista {
+    list-style-type: "🔥 ";
+}
+
+.tarjeta-item {
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 6px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.05);
+    animation: fadeInSlide 0.4s ease;
+}
+
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Centrando los botones */
+#botones-container {
+    display: flex;
+    justify-content: center;
+    /* Centra los botones */
+    gap: 20px;
+    /* Espacio entre los botones */
+    margin-top: 20px;
+    /* Espacio superior */
+}
+
+button {
+    background-color: #ff8b6a;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin: 0 10px;
+}
+
+button:hover {
+    background-color: #e07356;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
