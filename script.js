@@ -92,7 +92,7 @@ function seleccionarCarta(tipo) {
     const tarjetas = tipo === 'charla' ? tarjetasCharla : tarjetasAccion;
     const usadas = tipo === 'charla' ? usadasCharla : usadasAccion;
     const contenedorId = tipo === 'charla' ? "tarjetasCharla" : "tarjetasAccion";
-    const cantidad = tipo === 'charla' ? 1 : 4;
+    const cantidad = tipo === 'charla' ? 1 : 3;
 
     // Filtrar tarjetas no usadas (y no "Tarea" si es charla)
     let restantes = tarjetas.filter(t => {
