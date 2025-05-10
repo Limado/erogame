@@ -31,16 +31,23 @@
             </div>
             <div id="botones-container">
                 <button onclick="mostrarJuego()">Jugar</button>
-                <button onclick="reiniciarJuego()" class="boton-secundario">Reiniciar a cero</button>
             </div>
         </section>
 
         <section id="juegoSection" class="hidden">
             <div class="controls">
-                <button id="btnCharla" onclick="seleccionarCarta('charla')">Conversaciones íntimas</button>
-                <button id="btnAccion" onclick="seleccionarCarta('accion')">Ideas HOT</button>
-                <button onclick="reiniciarHoy()">Reiniciar</button>
-                <button onclick="mostrarInstrucciones()">Instrucciones</button>
+                <div class="grupo-botones">
+                    <button id="btnCharla" onclick="seleccionarCarta('charla')">Conversaciones íntimas</button>
+                </div>
+                <div class="grupo-botones">
+                    <button id="btnAccion" onclick="seleccionarCarta('accion')">Ideas HOT</button>
+                </div>
+                <div class="grupo-botones">
+                    <button onclick="reiniciarCharla()" class="boton-secundario">Reiniciar</button>
+                </div>
+                <div class="grupo-botones">
+                    <button onclick="mostrarInstrucciones()">Voler</button>
+                </div>
             </div>
             <div>
                 <h3>🔥 Ideas HOT de hoy</h3>

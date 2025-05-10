@@ -8,6 +8,20 @@ const tarjetasCharla = [
     "Si pudieras contarme un deseo íntimo sin miedo a que te juzgue o te lo exija… ¿cuál sería?",
     "Hagamos una ronda de preguntas atrevidas. Uno pregunta, el otro responde sin filtro.",
     "Recordemos juntos nuestro primer beso. ¿Dónde fue? ¿Qué sentimos? ¿Qué vino después?",
+    "¿Hay algo que siempre quisiste probar pero nunca te animaste a decirme?",
+    "Imaginemos una noche ideal juntos… ¿qué incluiría desde que empieza hasta que termina?",
+    "¿Hay alguna caricia, palabra o actitud que te encienda especialmente… pero que nunca me pediste?",
+    "Si tuvieras que seducirme desde cero esta noche, ¿qué harías distinto?",
+    "¿Qué parte de tu cuerpo te gustaría que explore más… y cómo?",
+    "¿Te animás a contarme una fantasía que te excite, aunque no la queramos concretar?",
+    "¿Recordás alguna vez que sentiste que me deseabas con solo mirarme? ¿Qué pasaba en ese momento?",
+    "¿Qué te haría sentir más libre en nuestra intimidad?",
+    "¿Hay algo que hacíamos antes y te gustaría que retomemos en nuestra vida sexual?",
+    "¿Qué tipo de palabras o gestos te hacen sentir sexy, no solo querido/a?",
+    "¿Qué lugar fuera de casa te parecería excitante para tener un encuentro íntimo?",
+    "Si te pidiera que me sorprendas en nuestra próxima noche juntos… ¿por dónde empezarías?",
+    "¿Qué escena de película o serie te quedó grabada como algo que te gustaría vivir?",
+    "¿Preferís que la intimidad empiece con ternura o con tensión sexual… o una mezcla?",
     "Tarea para el próximo encuentro sexual: Cada uno elige una prenda sexy para que el otro se ponga... y después vemos qué pasa.",
     "Tarea para el próximo encuentro sexual: Escribamos (por separado) una carta de deseo: lo que más nos gustaría que el otro haga, sin filtros."
 ];
@@ -27,10 +41,7 @@ const tarjetasAccion = [
     "Usá solo tu boca y lengua durante unos minutos (¡con imaginación!).",
     "Jugá a que no podés hablar… pero sí seducir.",
     "Hacelo/a esperar… y desearte más antes de actuar.",
-    "Usá una prenda sexy para seducirlo/a en silencio.",
     "Improvisá un striptease divertido y sexy.",
-
-    // Nuevas, más atrevidas:
     "Acaricialo/a solo por encima de la ropa interior… durante algunos minutos. Sin pasar el límite.",
     "Narrale al oído una fantasía que incluya a los dos… sin censura.",
     "Quitale la ropa con la boca (o intentalo).",
@@ -44,11 +55,12 @@ const tarjetasAccion = [
     "Hacelo/a tocarse frente a vos, pero solo si lo mirás sin tocar.",
     "Llevá una parte de su cuerpo a tu boca… y no digas una palabra mientras lo hacés.",
     "Hacé una pausa en medio del juego… y pedile que te suplique seguir.",
-    //Vestimenta sexy
-    "Elegí la prenda más sexy que tengas, ponétela… y hacé como si no te dieras cuenta de cuánto me estás provocando.",
-    "Vestite con lencería, medias o algo que te haga sentir deseada… y mostrame lo que elegiste como si fuera un secreto.",
-    "Ponete solo una tanga y una camisa, acercate sin decir nada… y dejá que mi imaginación se encargue del resto.",
-    "Usá un vestidito corto sin ropa interior… y hacé que se note.",
-    "Elegí una prenda que nunca te animaste a usar… y usala solo para mí esta noche.",
-    "Vestite con algo transparente o con aberturas… y mostrame cómo se ve desde todos los ángulos.",
+
+    // Solo para ella:
+    "Ella: Elegí la prenda más sexy que tengas, ponétela… y hacé como si no te dieras cuenta de cuánto me estás provocando.",
+    "Ella: Vestite con lencería, medias o algo que te haga sentir deseada… y mostrame lo que elegiste como si fuera un secreto.",
+    "Ella: Ponete solo una tanga y una camisa, acercate sin decir nada… y dejá que mi imaginación se encargue del resto.",
+    "Ella: Usá un vestidito corto sin ropa interior… y hacé que se note.",
+    "Ella: Elegí una prenda que nunca te animaste a usar… y usala solo para mí esta noche.",
+    "Ella: Vestite con algo transparente o con aberturas… y mostrame cómo se ve desde todos los ángulos."
 ];

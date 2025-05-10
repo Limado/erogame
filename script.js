@@ -8,7 +8,7 @@ let usadasAccion = [];
 /**
  * Se llama desde "Reiniciar a cero" en div instrucciones.
  */
-function reiniciarJuego() {
+function reiniciarCharla() {
     if (confirm("¿Estás seguro de que querés reiniciar todo? Esto borrará las tarjetas ya jugadas.")) {
         localStorage.removeItem("erogame_usadasCharla");
         usadasCharlaPersistidas = [];
@@ -85,16 +85,15 @@ function mostrarTarjetasPersistidas() {
  * @returns 
  */
 function seleccionarCarta(tipo) {
-    
-    if (tipo === 'charla' && usadasCharla.length >= 1) return;
-    // if (tipo === 'accion' && usadasAccion.length >= 3) return;
-    if(tipo === 'accion') reiniciarHoy();
+    if (tipo === 'charla' && usadasCharla.length >= 1)
+        mostrarJuego();
+    if (tipo === 'accion') reiniciarHot();
+
     const tarjetas = tipo === 'charla' ? tarjetasCharla : tarjetasAccion;
     const usadas = tipo === 'charla' ? usadasCharla : usadasAccion;
     const contenedorId = tipo === 'charla' ? "tarjetasCharla" : "tarjetasAccion";
-    const cantidad = tipo === 'charla' ? 1 : 3;
+    const cantidad = tipo === 'charla' ? 1 : 4;
 
-    // Filtrar tarjetas no usadas (y no "Tarea" si es charla)
     let restantes = tarjetas.filter(t => {
         return tipo === 'charla'
             ? !usadasCharlaPersistidas.includes(t)
@@ -103,7 +102,6 @@ function seleccionarCarta(tipo) {
 
     if (restantes.length === 0) return;
 
-    // Barajar y tomar las primeras 'cantidad'
     const seleccionadas = restantes
         .sort(() => Math.random() - 0.5)
         .slice(0, cantidad);
@@ -116,7 +114,6 @@ function seleccionarCarta(tipo) {
         contenedor.appendChild(ul);
     }
 
-    // Insertar las tarjetas seleccionadas al principio
     seleccionadas.forEach(seleccionada => {
         usadas.push(seleccionada);
 
@@ -124,16 +121,22 @@ function seleccionarCarta(tipo) {
         li.textContent = seleccionada;
         li.className = "tarjeta-item";
 
-        // Tachado si es charla ya usada antes
+        // Agregar clase visual si es para él o ella
+        if (tipo === 'accion') {
+            if (seleccionada.startsWith("Ella:")) {
+                li.classList.add("solo-ella");
+            } else if (seleccionada.startsWith("Él:")) {
+                li.classList.add("solo-el");
+            }
+        }
+
         if (tipo === 'charla' && usadasCharlaPersistidas.includes(seleccionada)) {
             li.style.textDecoration = "line-through";
             li.style.color = "#aaa";
         }
 
-        // Insertar la tarjeta al principio del contenedor
         ul.insertBefore(li, ul.firstChild);
 
-        // Guardar en localStorage si es de charla y no contiene "Tarea"
         if (tipo === 'charla' && !seleccionada.includes("Tarea")) {
             usadasCharlaPersistidas.push(seleccionada);
             localStorage.setItem("erogame_usadasCharla", JSON.stringify(usadasCharlaPersistidas));
@@ -141,12 +144,10 @@ function seleccionarCarta(tipo) {
     });
 }
 
-
-
 /**
  * Se llama desde "Reiniciar" en div juegos.
  */
-function reiniciarHoy() {
+function reiniciarHot() {
     usadasAccion = [];
     document.getElementById("tarjetasAccion").innerHTML = "";
 }

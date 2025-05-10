@@ -112,7 +112,18 @@ button:disabled {
     }
 }
 
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
 
+.grupo-botones {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
 /* Centrando los botones */
 #botones-container {
     display: flex;
@@ -144,3 +155,14 @@ button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
 }
+
+.solo-ella {
+    background-color: #ffe0f0;
+    border-left: 4px solid #d63384;
+}
+
+.solo-el {
+    background-color: #e0f0ff;
+    border-left: 4px solid #0d6efd;
+}
+
