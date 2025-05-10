@@ -87,7 +87,7 @@ function mostrarTarjetasPersistidas() {
 function seleccionarCarta(tipo) {
     
     if (tipo === 'charla' && usadasCharla.length >= 1) return;
-    //if (tipo === 'accion' && usadasAccion.length >= 3) return;
+    // if (tipo === 'accion' && usadasAccion.length >= 3) return;
     if(tipo === 'accion') reiniciarHoy();
     const tarjetas = tipo === 'charla' ? tarjetasCharla : tarjetasAccion;
     const usadas = tipo === 'charla' ? usadasCharla : usadasAccion;
