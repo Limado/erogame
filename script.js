@@ -92,7 +92,7 @@ function seleccionarCarta(tipo) {
     const tarjetas = tipo === 'charla' ? tarjetasCharla : tarjetasAccion;
     const usadas = tipo === 'charla' ? usadasCharla : usadasAccion;
     const contenedorId = tipo === 'charla' ? "tarjetasCharla" : "tarjetasAccion";
-    const cantidad = tipo === 'charla' ? 1 : 4;
+    const cantidad = tipo === 'charla' ? 1 : 4; // Solo 1 tarjeta para charla
 
     let restantes = tarjetas.filter(t => {
         return tipo === 'charla'
@@ -102,24 +102,34 @@ function seleccionarCarta(tipo) {
 
     if (restantes.length === 0) return;
 
-    let seleccionadas = restantes
-        .sort(() => Math.random() - 0.5)
-        .slice(0, cantidad);
+    let seleccionadas;
 
-    // Verificamos si hay más de una tarjeta "Ella", y si es el caso, removemos todas menos una.
-    const ellaSeleccionada = seleccionadas.filter(t => t.startsWith("Ella:"));
-    if (ellaSeleccionada.length > 1) {
-        // Si hay más de una tarjeta para Ella, eliminamos todas menos una.
-        seleccionadas = seleccionadas.filter(t => !t.startsWith("Ella:"));
-        seleccionadas.push(ellaSeleccionada[0]); // Agregar solo la primera "Ella"
-    }
+    if (tipo === 'charla') {
+        // Solo seleccionamos una tarjeta para charla
+        seleccionadas = restantes
+            .sort(() => Math.random() - 0.5)
+            .slice(0, cantidad);
+    } else {
+        // Para acción, seleccionamos 4 tarjetas
+        seleccionadas = restantes
+            .sort(() => Math.random() - 0.5)
+            .slice(0, cantidad);
 
-    // Si seleccionamos menos de 4, llenamos con más tarjetas aleatorias
-    while (seleccionadas.length < 4) {
-        // Filtramos las tarjetas para asegurarnos de que no agreguemos la misma
-        let restantesParaLlenar = restantes.filter(t => !seleccionadas.includes(t));
-        let tarjetaExtra = restantesParaLlenar.sort(() => Math.random() - 0.5)[0];
-        seleccionadas.push(tarjetaExtra);
+        // Verificamos si hay más de una tarjeta "Ella", y si es el caso, removemos todas menos una.
+        const ellaSeleccionada = seleccionadas.filter(t => t.startsWith("Ella:"));
+        if (ellaSeleccionada.length > 1) {
+            // Si hay más de una tarjeta para Ella, eliminamos todas menos una.
+            seleccionadas = seleccionadas.filter(t => !t.startsWith("Ella:"));
+            seleccionadas.push(ellaSeleccionada[0]); // Agregar solo la primera "Ella"
+        }
+
+        // Si seleccionamos menos de 4, llenamos con más tarjetas aleatorias
+        while (seleccionadas.length < 4) {
+            // Filtramos las tarjetas para asegurarnos de que no agreguemos la misma
+            let restantesParaLlenar = restantes.filter(t => !seleccionadas.includes(t));
+            let tarjetaExtra = restantesParaLlenar.sort(() => Math.random() - 0.5)[0];
+            seleccionadas.push(tarjetaExtra);
+        }
     }
 
     const contenedor = document.getElementById(contenedorId);
@@ -159,6 +169,7 @@ function seleccionarCarta(tipo) {
         }
     });
 }
+
 
 /**
  * Se llama desde "Reiniciar" en div juegos.
